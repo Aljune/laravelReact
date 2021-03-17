@@ -21,3 +21,13 @@ Route::get('/testing-api', function() {
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+
+// PROJECT API ROUTES
+Route::get('/project', 'ProjectAPIController@projectList');
+Route::post('/project', 'ProjectAPIController@createProject');
+Route::post('/createProject', 'ProjectAPIController@createProject'); 
+/* Fail safe, incase Laravel gets confused with /project (POST) route. but is MVC standard*/
+Route::get('/remove/project/{id}', 'ProjectAPIController@removeProject');
+Route::get('/project/{id}', 'ProjectAPIController@projectDetail');
+
