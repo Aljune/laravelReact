@@ -47,7 +47,7 @@
     <div id="app">
 
     </div>
-    <script src="{{assest('js/app.js')}}"></script>
+    <script src="{{assest('js/app.js')}}" defer></script>
 </body>
 
 </html>
